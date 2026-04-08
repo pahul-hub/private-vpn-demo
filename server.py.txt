@@ -1,0 +1,11 @@
+import http.server
+import socketserver
+
+PORT = 8080
+Handler = http.server.SimpleHTTPRequestHandler
+
+print(f"Starting Palladium test server on port {PORT}...")
+
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print("Server is successfully running and serving the Hello World Private VPN Demo.")
+    httpd.serve_forever()
